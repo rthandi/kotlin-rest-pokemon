@@ -9,7 +9,7 @@ interface Pokemon: Entity<Pokemon> {
   companion object: Entity.Factory<Pokemon>()
 
   val id: Long?
-  val name: String
+  var name: String
 }
 
 object Pokemons: Table<Pokemon>("pokemons") {

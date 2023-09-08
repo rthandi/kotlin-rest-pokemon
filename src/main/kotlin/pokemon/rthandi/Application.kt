@@ -3,6 +3,7 @@ package pokemon.rthandi
 import io.ktor.server.application.*
 import io.ktor.server.engine.*
 import io.ktor.server.netty.*
+import pokemon.rthandi.core.configureCoreRoutes
 import pokemon.rthandi.plugins.*
 
 fun main() {
@@ -13,4 +14,5 @@ fun main() {
 fun Application.module() {
   configureSerialization()
   configureDatabases()
+  configureCoreRoutes()
 }

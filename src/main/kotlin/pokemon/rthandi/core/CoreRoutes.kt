@@ -14,6 +14,7 @@ fun Application.configureCoreRoutes() {
     route("/") {
       val pokemonService = PokemonService()
       createPokemon(pokemonService)
+      findAllPokemons(pokemonService)
     }
   }
 }
@@ -26,5 +27,12 @@ fun Route.createPokemon(pokemonService: PokemonService) {
       call.respond(HttpStatusCode.Created)
     else
       call.respond(HttpStatusCode.BadRequest, ErrorResponse("Cannot create book"))
+  }
+}
+
+fun Route.findAllPokemons(pokemonService: PokemonService) {
+  get {
+    val pokemons = pokemonService.findAllPokemons()
+    call.respond(pokemons)
   }
 }

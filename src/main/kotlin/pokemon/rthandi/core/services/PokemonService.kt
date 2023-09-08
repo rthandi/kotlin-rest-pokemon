@@ -1,7 +1,6 @@
 package pokemon.rthandi.core.services
 
 import org.ktorm.database.Database
-import org.ktorm.dsl.from
 import org.ktorm.entity.add
 import org.ktorm.entity.sequenceOf
 import org.ktorm.entity.toList

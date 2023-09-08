@@ -1,5 +1,5 @@
-CREATE TABLE pokemon
+CREATE TABLE pokemons
 (
-    id   SERIAL NOT NULL,
+    id   SERIAL PRIMARY KEY,
     name varchar NOT NULL
 );

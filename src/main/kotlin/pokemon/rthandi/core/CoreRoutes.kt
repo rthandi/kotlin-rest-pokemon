@@ -11,7 +11,7 @@ import pokemon.rthandi.core.services.PokemonService
 
 fun Application.configureCoreRoutes() {
   routing {
-    route("/") {
+    route("/pokemon") {
       val pokemonService = PokemonService()
       createPokemon(pokemonService)
       findAllPokemons(pokemonService)

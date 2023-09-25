@@ -36,3 +36,5 @@ out/
 .vscode/
 
 sandbox-db/
+
+local.properties

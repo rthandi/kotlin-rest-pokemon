@@ -34,7 +34,8 @@ fun Route.createPokemon(pokemonService: PokemonService) {
 
 fun Route.findAllPokemons(pokemonService: PokemonService) {
   get {
-    val pokemons = pokemonService.findAllPokemons().map(Pokemon::toPokemonResponse)
+    val type = call.request.queryParameters["type"]
+    val pokemons = pokemonService.findAllPokemons(type).map(Pokemon::toPokemonResponse)
     call.respond(message = pokemons)
   }
 }

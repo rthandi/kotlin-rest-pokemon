@@ -1,5 +1,6 @@
 package pokemon.rthandi.core.models
 
+import kotlinx.serialization.Serializable
 import org.ktorm.entity.Entity
 import org.ktorm.schema.Table
 import org.ktorm.schema.long

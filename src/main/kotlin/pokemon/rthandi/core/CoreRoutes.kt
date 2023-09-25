@@ -7,6 +7,8 @@ import io.ktor.server.response.*
 import io.ktor.server.routing.*
 import pokemon.rthandi.core.DTO.ErrorResponse
 import pokemon.rthandi.core.DTO.PokemonRequest
+import pokemon.rthandi.core.DTO.PokemonResponse
+import pokemon.rthandi.core.models.Pokemon
 import pokemon.rthandi.core.services.PokemonService
 
 fun Application.configureCoreRoutes() {
@@ -32,7 +34,10 @@ fun Route.createPokemon(pokemonService: PokemonService) {
 
 fun Route.findAllPokemons(pokemonService: PokemonService) {
   get {
-    val pokemons = pokemonService.findAllPokemons()
-    call.respond(pokemons)
+    val pokemons = pokemonService.findAllPokemons().map(Pokemon::toPokemonResponse)
+    call.respond(message = pokemons)
   }
 }
+
+private fun Pokemon?.toPokemonResponse(): PokemonResponse? =
+  this?.let { PokemonResponse(it.id!!, it.name) }

@@ -13,6 +13,7 @@ class PokemonService {
     url = "jdbc:postgresql://localhost:5438/postgres",
     driver = "org.postgresql.Driver",
     user = "postgres",
+    //TODO: Set this in env vars
     password = "postgres"
   )
 

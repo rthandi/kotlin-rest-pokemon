@@ -1,8 +1,9 @@
 package pokemon.rthandi.core.services
 
 import org.ktorm.database.Database
-import org.ktorm.dsl.from
+import org.ktorm.dsl.*
 import org.ktorm.entity.add
+import org.ktorm.entity.filter
 import org.ktorm.entity.sequenceOf
 import org.ktorm.entity.toList
 import pokemon.rthandi.core.DTO.PokemonRequest
@@ -51,6 +52,10 @@ class PokemonService {
   }
 
   fun findAllPokemons(type: String?): List<Pokemon> {
-    return database.sequenceOf(Pokemons).toList()
+    if (type == null)
+      return database.sequenceOf(Pokemons).toList()
+    return database.sequenceOf(Pokemons)
+      .filter { it.type eq type }
+      .toList()
   }
 }

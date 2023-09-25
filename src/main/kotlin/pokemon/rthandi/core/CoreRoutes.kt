@@ -26,7 +26,7 @@ fun Route.createPokemon(pokemonService: PokemonService) {
     if (success)
       call.respond(HttpStatusCode.Created)
     else
-      call.respond(HttpStatusCode.BadRequest, ErrorResponse("Cannot create book"))
+      call.respond(HttpStatusCode.BadRequest, ErrorResponse("Cannot create pokemon"))
   }
 }
 

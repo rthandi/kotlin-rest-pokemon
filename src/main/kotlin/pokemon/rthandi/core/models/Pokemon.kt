@@ -13,6 +13,18 @@ interface Pokemon: Entity<Pokemon> {
   var name: String
 }
 
+interface FirePokemon: Pokemon {
+  companion object: Entity.Factory<Pokemon>()
+}
+
+interface WaterPokemon: Pokemon {
+  companion object: Entity.Factory<Pokemon>()
+}
+
+interface GrassPokemon: Pokemon {
+  companion object: Entity.Factory<Pokemon>()
+}
+
 object Pokemons: Table<Pokemon>("pokemons") {
   val id = long("id").primaryKey().bindTo(Pokemon::id)
   val name = varchar("name").bindTo(Pokemon::name)

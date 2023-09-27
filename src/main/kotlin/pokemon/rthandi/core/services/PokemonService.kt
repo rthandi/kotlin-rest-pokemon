@@ -24,18 +24,21 @@ class PokemonService {
       "fire" -> {
         newPokemon = FirePokemon {
           name = pokemonRequest.name
+          type = "fire"
         }
       }
 
       "water" -> {
         newPokemon = WaterPokemon {
           name = pokemonRequest.name
+          type = "water"
         }
       }
 
       "grass" -> {
         newPokemon = GrassPokemon {
           name = pokemonRequest.name
+          type = "grass"
         }
       }
 

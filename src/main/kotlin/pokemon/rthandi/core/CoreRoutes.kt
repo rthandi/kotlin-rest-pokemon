@@ -24,7 +24,7 @@ fun Application.configureCoreRoutes() {
 fun Route.createPokemon(pokemonService: PokemonService) {
   post {
     val request = call.receive<PokemonRequest>()
-    val success = pokemonService.createPokemon(pokemonRequest = request)
+    val success = pokemonService.createPokemon(pokemonRequest = request,)
     if (success)
       call.respond(HttpStatusCode.Created)
     else

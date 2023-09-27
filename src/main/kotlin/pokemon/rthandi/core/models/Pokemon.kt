@@ -11,28 +11,19 @@ interface Pokemon: Entity<Pokemon> {
 
   val id: Long?
   var name: String
-  val type: String?
+  var type: String?
 }
 
 interface FirePokemon: Pokemon {
   companion object: Entity.Factory<Pokemon>()
-
-  override val type: String
-    get() = "fire"
 }
 
 interface WaterPokemon: Pokemon {
   companion object: Entity.Factory<Pokemon>()
-
-  override val type: String
-    get() = "water"
 }
 
 interface GrassPokemon: Pokemon {
   companion object: Entity.Factory<Pokemon>()
-
-  override val type: String
-    get() = "grass"
 }
 
 object Pokemons: Table<Pokemon>("pokemons") {
